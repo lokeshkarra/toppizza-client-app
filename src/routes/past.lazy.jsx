@@ -12,7 +12,7 @@ export const Route = createLazyFileRoute("/past")({
 
 const intl = new Intl.NumberFormat("en-US", {
   style: "currency",
-  currency: "USD",
+  currency: "INR",
 });
 
 function ErrorBoundaryWrappedPastOrderRoutes() {
