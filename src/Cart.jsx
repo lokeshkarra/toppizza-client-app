@@ -1,6 +1,6 @@
 const intl = new Intl.NumberFormat("en-US", {
   style: "currency",
-  currency: "USD", // feel free to change to your local currency
+  currency: "INR", // feel free to change to your local currency
 });
 
 export default function Cart({ cart, checkout }) {
