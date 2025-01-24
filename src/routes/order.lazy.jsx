@@ -58,20 +58,26 @@ function Order() {
     setPizzaTypes(pizzasJson);
     setLoading(false);
   }
+  function addToCart(e) {
+    {
+      e.preventDefault();
+      setCart([
+        ...cart,
+        { pizza: selectedPizza, size: pizzaSize, price },
+      ]);
+    }
+  }
+
+  const removeFromCart = (index) => {
+    setCart((prevCart) => prevCart.filter((_, i) => i !== index));
+  };
 
   return (
     <div className="order-page">
       <div className="order">
         <h2>Create Order</h2>
         <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            setCart([
-              ...cart,
-              { pizza: selectedPizza, size: pizzaSize, price },
-            ]);
-          }}
-        >
+          onSubmit={(e) => addToCart(e)}>
           <div>
             <div>
               <label htmlFor="pizza-type">Pizza Type</label>
@@ -141,7 +147,7 @@ function Order() {
           )}
         </form>
       </div>
-      {loading ? <h2>LOADING …</h2> : <Cart checkout={checkout} cart={cart} />}
+      {loading ? <h2>LOADING …</h2> : <Cart checkout={checkout} cart={cart} removeFromCart={removeFromCart}/>}
     </div>
   );
 }
