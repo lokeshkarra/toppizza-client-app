@@ -24,7 +24,7 @@ export default function Cart({ cart, checkout, removeFromCart }) {
             <span className="price">{item.price}</span> 
             <span className="remove-button">
             &nbsp;
-            <button onClick={() => removeFromCart(index)}><strong>-</strong></button>
+            <button onClick={() => removeFromCart(index)}><strong>x</strong></button>
             </span>
             
             </div>
