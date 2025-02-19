@@ -6,3 +6,5 @@ coverage/
 .vscode/
 routeTree.gen.ts
 coverage
+.vite
+package-lock.json
