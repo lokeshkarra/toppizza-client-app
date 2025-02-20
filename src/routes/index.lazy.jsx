@@ -13,6 +13,9 @@ function Index() {
       </div>
       <ul>
         <li>
+          <Link to="/pizza-menu-grid">Menu</Link>
+        </li>
+        <li>
           <Link to="/order">Order</Link>
         </li>
         <li>
