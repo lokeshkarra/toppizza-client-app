@@ -283,22 +283,6 @@ button:disabled {
   gap: 50px;
 }
 
-.cart {
-  border-left: 1px solid var(--border);
-  line-height: 1.5;
-  text-align: center;
-  padding: 15px;
-}
-
-.cart p {
-  margin: 15px 0;
-}
-
-.index h1 {
-  color: var(--primary);
-  font-family: var(--font);
-  /*font-weight: normal; */
-}
 
 .index {
   display: grid;

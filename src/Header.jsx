@@ -5,6 +5,7 @@ import { CartContext } from "./contexts";
 export default function Header() {
   const [cart] = useContext(CartContext);
   return (
+    <>
     <nav>
       <Link to={"/"}>
         <h1 className="logo">Toppizza</h1>
@@ -16,5 +17,6 @@ export default function Header() {
         </span>
       </div>
     </nav>
+    </>
   );
 }
