@@ -96,6 +96,12 @@ nav > a {
   src: url("/PinkSunset-Regular.ttf");
 }
 
+h1 {
+  font-family: var(--font);
+  color: var(--primary);
+ 
+}
+
 h2 {
   font-family: var(--font);
   font-size: 40px;
