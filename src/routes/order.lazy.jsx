@@ -26,10 +26,13 @@ function Order() {
   async function checkout() {
     setLoading(true);
 
+    const userId = localStorage.getItem("user_id");
+
     await fetch(`${apiUrl}/api/order`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        "x-user-id": userId,
       },
       body: JSON.stringify({
         cart,
@@ -50,6 +53,12 @@ function Order() {
 
   useEffect(() => {
     fetchPizzaTypes();
+  }, []);
+
+  useEffect(() => {
+    if (!localStorage.getItem("user_id")) {
+      localStorage.setItem("user_id", crypto.randomUUID());
+    }
   }, []);
 
   async function fetchPizzaTypes() {
