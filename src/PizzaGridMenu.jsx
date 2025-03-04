@@ -1,6 +1,7 @@
-import React, { useState, useEffect, useContext, useCallback } from "react";
+import { useState, useEffect, useContext, useCallback } from "react";
 import "../public/PizzaGridMenu.css";
-import Pizza from "./Pizza";
+// import Pizza from "./Pizza";
+// import Cart from "../Cart";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 import { CartContext } from "./contexts/CartContext";
@@ -14,11 +15,16 @@ const INR_FORMATTER = new Intl.NumberFormat("en-US", {
 const PizzaGridMenu = () => {
     const [pizzaList, setPizzaList] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
-    const [selectedPizza, setSelectedPizza] = useState(null);
     const [pizzaSizes, setPizzaSizes] = useState({});
     const [pizzaQuantities, setPizzaQuantities] = useState({});
-    const { updateCart } = useContext(CartContext);
+    const { updateCart, serCart } = useContext(CartContext);
     const [expandedDescriptions, setExpandedDescriptions] = useState({});
+
+    // const [pizzaType, setPizzaType] = useState("pepperoni");
+    // const [pizzaSize, setPizzaSize] = useState("M");
+    // const [pizzaTypes, setPizzaTypes] = useState([]);
+    // const [loading, setLoading] = useState(true);
+    // const [cart, setCart] = useContext(CartContext);
 
     // Fetch pizza types using useCallback for memoization
     const fetchPizzaTypes = useCallback(async () => {
@@ -148,6 +154,11 @@ const PizzaGridMenu = () => {
     return (
         <div className="pizza-grid-menu-page">
             <h2>Pizza Menu</h2>
+            <center>
+                <br></br>
+                <h1>!!! Under Devolopment !!!</h1>
+            </center>
+            
             {isLoading ? (
                 <p>Loading pizzas...</p>
             ) : (
@@ -210,13 +221,6 @@ const PizzaGridMenu = () => {
                             </div>
                         );
                     })}
-                </div>
-            )}
-
-            {selectedPizza && (
-                <div className="selected-pizza-preview">
-                    <h3>Selected Pizza Preview:</h3>
-                    <Pizza {...selectedPizza} />
                 </div>
             )}
         </div>
